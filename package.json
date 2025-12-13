@@ -1,0 +1,27 @@
+{
+  "name": "a-plus-3f0-card",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://minueono.github.io/a-3f0-card-selector-1-/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "lucide-react": "^0.560.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.2.0",
+    "gh-pages": "^6.1.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}
