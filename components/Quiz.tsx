@@ -10,24 +10,40 @@ interface QuizProps {
 export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
+  // ★ 추가 1: 중복 클릭 방지용 상태
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleOptionSelect = (optionIndex: number) => {
+    // ★ 추가 2: 이미 넘어가는 중이면 클릭 무시 (광클 방지)
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true); // 클릭 잠금 시작
+
     const newAnswers = [...answers, optionIndex];
     setAnswers(newAnswers);
 
     if (currentQuestionIndex < QUESTIONS.length - 1) {
       setTimeout(() => {
         setCurrentQuestionIndex(prev => prev + 1);
+        setIsTransitioning(false); // 다음 질문 나오면 잠금 해제
       }, 300); 
     } else {
       setTimeout(() => {
         const result = calculateRecommendation(newAnswers);
         onComplete(result);
+        // 마지막엔 잠금 해제 필요 없음 (화면이 바뀌므로)
       }, 300);
     }
   };
 
   const currentQuestion = QUESTIONS[currentQuestionIndex];
+  
+  // ★ 추가 3: 치명적 에러 방지 (질문 데이터가 없으면 아무것도 안 그림)
+  // 이 코드가 'reading question of undefined' 에러를 막아줍니다.
+  if (!currentQuestion) {
+    return <div className="py-20 text-center">로딩 중...</div>;
+  }
+
   const progress = ((currentQuestionIndex + 1) / QUESTIONS.length) * 100;
 
   return (
@@ -56,7 +72,8 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
             <button
               key={`${currentQuestionIndex}-${idx}`}
               onClick={() => handleOptionSelect(idx)}
-              className="
+              disabled={isTransitioning} // ★ 추가 4: 넘어가는 중엔 버튼 비활성화
+              className={`
                 group
                 w-full
                 p-5 
@@ -76,7 +93,8 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
                 relative
                 overflow-hidden
                 animate-fade-in-up
-              "
+                ${isTransitioning ? 'cursor-not-allowed opacity-70' : ''} 
+              `}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               <span className="relative z-10 pl-2 break-keep">{option}</span>
