@@ -124,7 +124,7 @@ export const POPULAR_CARDS: CardData[] = [
   {
     id: 'life-bridge',
     name: 'CORE LIFE',
-    image: 'https://www.shinhancard.com/pconts/images/contents/card/plate/cd_credit_mrlife.png',
+    image: './corelife.png',
     description: "당신의 가정 경제를 든든하게 (Family)",
     tags: ['생활비', '자동이체', '가족카드'],
     benefits: ['금융(이자) 우대 10~20% 할인', '교육/마트/관리비 5~10% 할인', '스트리밍 20% 할인'],
