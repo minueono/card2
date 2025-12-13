@@ -12,7 +12,7 @@ export const POPULAR_CARDS: CardData[] = [
   {
     id: 'arcus',
     name: 'ARCUS PRIME',
-    image: '/card2/aqus.png',
+    image: 'aqus.png',
     description: "품격 있는 당신의 여유로운 삶을 위한 동반자",
     tags: ['Health', 'Loyalty', 'Premium'],
     benefits: ['병원/약국 5% 할인', '공과금 월 1만원 할인', '금융 우대 및 캐시백'],
@@ -50,7 +50,7 @@ export const POPULAR_CARDS: CardData[] = [
   {
     id: 'neon-plus',
     name: 'NEON+',
-    image: '/card2/neon.png',
+    image: 'neon.png',
     description: "쓸 때마다 즉시 혜택, 갚을 때도 보너스",
     tags: ['Shopping', 'Digital', 'Cashback'],
     benefits: ['온라인/배달 7% 캐시백', '선결제 시 2% 리워드', 'OTT 10% 할인'],
@@ -87,7 +87,7 @@ export const POPULAR_CARDS: CardData[] = [
   {
     id: 'maestro',
     name: 'FLOW',
-    image: '/card2/flow.png',
+    image: 'flow.png',
     description: "금융과 라이프스타일의 완벽한 조화 (VVIP)",
     tags: ['High-End', '금융우대', 'Luxury'],
     benefits: ['전 가맹점 1.2% 무제한 적립', '해외/골프/호텔 3% 특별 적립', '금융 우대 서비스'],
@@ -124,7 +124,7 @@ export const POPULAR_CARDS: CardData[] = [
   {
     id: 'life-bridge',
     name: 'CORE LIFE',
-    image: './corelife.png',
+    image: 'corelife.png',
     description: "당신의 가정 경제를 든든하게 (Family)",
     tags: ['생활비', '자동이체', '가족카드'],
     benefits: ['금융(이자) 우대 10~20% 할인', '교육/마트/관리비 5~10% 할인', '스트리밍 20% 할인'],
