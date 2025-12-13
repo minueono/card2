@@ -50,7 +50,7 @@ export const POPULAR_CARDS: CardData[] = [
   {
     id: 'neon-plus',
     name: 'NEON+',
-    image: 'noeon.png',
+    image: 'neon.png',
     description: "쓸 때마다 즉시 혜택, 갚을 때도 보너스",
     tags: ['Shopping', 'Digital', 'Cashback'],
     benefits: ['온라인/배달 7% 캐시백', '선결제 시 2% 리워드', 'OTT 10% 할인'],
