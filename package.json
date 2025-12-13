@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://minueono.github.io/a-3f0-card-selector-1-/",
+  "homepage": "https://github.com/minueono/card2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
